@@ -2,16 +2,16 @@
 # Manage my process
 
 if (($# == 1)); then
-	if (($1 == "start"); then
-		./manage_my_process &;
-		echo $! > /var/run/my_process.pid;
-		echo "manage_my_process started";
+	if (($1 == "start")); then
+		./manage_my_process &
+		echo $! > /var/run/my_process.pid
+		echo "manage_my_process started"
 	elif (($1 == "stop")); then
-		kill "(cat /var/run/my_process.pid)
+		kill "(cat /var/run/my_process.pid)"
 		rm -f /var/run/my_process.pid
 		echo "manage_my_process stopped"
 	elif (($1 == "restart")); then
-		kill "(cat /var/run/my_process.pid)
+		kill "$(cat /var/run/my_process.pid)"
 		rm -f /var/run/my_process.pid
 		./manage_my_process &
 		echo $! > /var/run/my_process.pid
