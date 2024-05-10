@@ -2,8 +2,8 @@
 #Process and PID file
 sudo echo $$ > /var/run/myscript.pid
 trap '{echo "I hate the kill command"; sudo rm -f /var/run/myscript.pid;}' SIGTERM
-trap 'echo "Y U no love me?!"' SIGINT
-trap 'sudo rm -f /var/run/myscript.pid' SIGQUIT
+trap "echo "Y U no love me?!"" SIGINT
+trap "sudo rm -f /var/run/myscript.pid" SIGQUIT
 while true; do
         echo "To infinity and beyond"
 	sleep 2
