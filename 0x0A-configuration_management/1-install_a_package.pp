@@ -1,6 +1,6 @@
-# Install Flask 2.1.0 using pip3
+# 1-install_a_package.pp
 
-package { 'flask':
-  ensure   => '2.1.0',
-  provider => pip3,
+exec { 'install_flask':
+  command => '/usr/bin/apt-get -y install flask= -v 2.1.0',
 }
+
