@@ -1,0 +1,6 @@
+# Client configuration file
+Host *
+    User ubuntu
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
+
