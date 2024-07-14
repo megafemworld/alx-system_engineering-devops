@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Using your debugging skills, find out what’s keeping your Ubuntu
-sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
-sudo service nginx restart
+# debugging Nginx web server
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+service nginx restart
