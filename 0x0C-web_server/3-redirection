@@ -1,14 +1,10 @@
 #!/usr/bin/env bash
 # script to install and setup nginx
+
 CONFIG_FILE="/etc/nginx/sites-available/default"
-# install nginx
 apt-get -y update
 apt-get -y install nginx
-
-# update index.html file
 echo 'Hello World' > /usr/share/nginx/html/index.html
-
-# update config file to redirect
 printf %s "server {
     listen 80;
     listen [::]:80 default_server;
@@ -19,6 +15,4 @@ printf %s "server {
         return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
     }
 }" > $CONFIG_FILE
-
-# start nginx after reloading config
 service nginx start
