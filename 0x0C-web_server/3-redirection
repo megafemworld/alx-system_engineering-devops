@@ -22,10 +22,9 @@ SERVER_CONFIG=\
 }"
 
 bash -c "echo -e '$SERVER_CONFIG' > /etc/nginx/sites-enabled/default"
-
+sed -i '/listen 80 default_server/a rewrite ^/redirect_me https:/maykayconcept.tech/ permanent;' /etc/nginx/sites-
 if [ "$(pgrep -c nginx)" -le 0 ]; then
 	service nginx start
 else
 	service nginx restart
 fi
-
