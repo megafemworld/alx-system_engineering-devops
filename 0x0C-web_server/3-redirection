@@ -2,10 +2,10 @@
 # script to install and setup nginx
 
 CONFIG_FILE="/etc/nginx/sites-available/default"
-apt-get -y update
-apt-get -y install nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
 echo 'Hello World' > /usr/share/nginx/html/index.html
-printf %s "server {
+echo "server {
     listen 80;
     listen [::]:80 default_server;
     root   /usr/share/nginx/html;
