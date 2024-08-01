@@ -6,14 +6,14 @@ if __name__ == "__main__":
     from sys import argv
     import csv
 
-    employee_id = argv[1]
+    id = argv[1]
     base_url = "https://jsonplaceholder.typicode.com/"
-    todo_url = f"{base_url}/todos?userId={employee_id}"
-    user_url = f"{base_url}/users/{employee_id}"
-    username = requests.get(user_url).json().get('username')
-    filename = f"{employee_id}.csv"
+    todo_url = f"{base_url}/todos?userId={id}"
+    user_url = f"{base_url}/users/{id}"
+    un = requests.get(user_url).json().get('username')
+    filename = f"{id}.csv"
     todos = requests.get(todo_url).json()
     with open(filename, 'w') as f:
-        writer = csv.writer(f, quoting=csv.QUOTE_ALL)
-        for todo in todos:
-            writer.writerow([employee_id, username, todo['completed'], todo['title']])
+        w = csv.writer(f, quoting=csv.QUOTE_ALL)
+        for t in todos:
+            w.writerow([id, un, t['completed'], t['title']])
