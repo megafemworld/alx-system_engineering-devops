@@ -15,6 +15,6 @@ if __name__ == "__main__":
     completed = (requests.get(com_url).json())
     completed_t = len(completed)
     done_tasks = [todo for todo in completed]
-    print(f"Employee {name} is done with tasks({completed_t}/{todos})")
+    print(f"Employee {name} is done with tasks({completed_t}/{todos}):")
     for title in done_tasks:
         print(f"\t {title.get('title')}")
