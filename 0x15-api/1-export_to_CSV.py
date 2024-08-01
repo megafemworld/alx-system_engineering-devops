@@ -9,9 +9,11 @@ if __name__ == "__main__":
     employee_id = argv[1]
     base_url = "https://jsonplaceholder.typicode.com/"
     todo_url = f"{base_url}/todos?userId={employee_id}"
+    user_url= f"{base_url}/users/{employee_id}"
+    username = requests.get(user_url).json().get('username')
     filename = f"{employee_id}.csv"
     todos = requests.get(todo_url).json()
     with open(filename, 'w') as csv_file:
         writer = csv.writer(csv_file, delimiter=',', quoting=csv.QUOTE_ALL)
         for todo in todos:
-            writer.writenow([argv[1], todo['completed'], todo['title']])
+            writer.writerow([employee_id, username, todo['completed'], todo['title']])
