@@ -21,7 +21,7 @@ if __name__ == "__main__":
             "username": un
         }
         tasks.append(task)
-    data = {str(id) : tasks}
+    data = {str(id): tasks}
 
     with open(filename, 'w') as f:
         json.dump(data, f)
