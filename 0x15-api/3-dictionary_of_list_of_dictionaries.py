@@ -19,8 +19,8 @@ if __name__ == "__main__":
                 taskdict = {
                         "username": user.get('username'),
                         "task": task.get('title'),
-                        "completed": task.get('completed'}}
-                task.append(taskdict)
+                        "completed": task.get('completed')}
+                tasks.append(taskdict)
             alldict[user.get('id')] = tasks
 
     with open(filename, 'w') as f:
