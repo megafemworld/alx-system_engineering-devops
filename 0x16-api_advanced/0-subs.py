@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """ Reddit API"""
-import requests, json
+import requests
+import json
+
 
 def number_of_subscribers(subreddit):
     """return number of subscribers"""
