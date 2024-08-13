@@ -7,7 +7,7 @@ import requests
 def number_of_subscribers(subreddit):
     """return number of subscribers"""
 
-    api_url = f"https://api.reddit.com/r/{subreddit}/about.json"
+    api_url = f"https://www.reddit.com/r/{subreddit}/about.json"
     headers = {'user-agent': 'megafemgroup API request for ALX'}
     client = requests.session()
     client.headers = headers
