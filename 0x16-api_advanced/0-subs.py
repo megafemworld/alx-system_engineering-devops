@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """ Reddit API"""
-import requests
 import json
+import requests
 
 
 def number_of_subscribers(subreddit):
     """return number of subscribers"""
 
     api_url = f"https://api.reddit.com/r/{subreddit}/about.json"
-    response = requests.get(api_url, header=header)
+    response = requests.get(api_url)
     data = response.json()
     if response.status_code != 200:
         return 0
