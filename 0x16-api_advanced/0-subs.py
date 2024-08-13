@@ -3,11 +3,12 @@
 import requests
 import json
 
+
 def number_of_subscribers(subreddit):
     """return number of subscribers"""
 
     api_url = f"https://api.reddit.com/r/{subreddit}/about.json"
-    response = requests.get(api_url)
+    response = requests.get(api_url, header=header)
     data = response.json()
     if response.status_code != 200:
         return 0
